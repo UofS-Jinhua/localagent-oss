@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Started by llama-swap on the first request after an idle unload: pick a free GPU, run
 # llama-server on it, and stop it when llama-swap asks or when llama-swap itself is gone.
-#   start-llm.sh PORT      (lives in the server's work directory; see the README)
+#   start-llm.sh PORT      (lives in the server's work directory; see docs/servers.md)
 set -euo pipefail
 
 W="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

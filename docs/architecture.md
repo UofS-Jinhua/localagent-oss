@@ -178,7 +178,7 @@ scripts/gpu-server/      不属于本程序，是拷到 GPU 服务器上用的�
                          setup-searxng.sh / run-searxng.sh：给 WebSearch 用的私有 SearXNG（源码包 + uv，只听 127.0.0.1:18888）；
                          la-services.sh：一条命令管三个 tmux 会话（la-swap / la-search / la-ui）的 status|start|stop|restart。
                          端口是谁的按 uid 判断（不变量 41）；stop 先 TERM 会话里的全部进程再关会话。
-                         程序照常把它当成一个 OpenAI 兼容的 provider（见 README、design.md §1.6）
+                         程序照常把它当成一个 OpenAI 兼容的 provider（见 servers.md、design.md §1.6）
 setup.cmd · LocalAgent.cmd    双击安装 / 双击开窗口；快捷方式用 pythonw 启动 la ui，所以没有控制台窗口
                          （没有控制台时 stdout 是 None，cli/output.py 的 prepare_streams 会把输出转到 data/ui.log）
 examples/buggy_stats/    验收用的示例项目，含两个 bug

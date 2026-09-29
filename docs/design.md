@@ -66,7 +66,7 @@
 
 ## 1.6 实测：GPU 服务器上的一张 A100，有请求才启动（2026-09-12）
 
-环境：一张 A100 80GB（驱动 565）；llama.cpp b10931，用 CUDA 12.6 编译；模型是 Qwen3.8 27B 的 Q8_0 GGUF（29 GB，自带 MTP 头），加 F16 视觉投影。上下文 262,144，2 个槽位共用（`--kv-unified`）。前面挂一个 llama-swap（有请求才启动，空闲 15 分钟卸载），笔记本经 ssh 隧道（中间还有跳板机）访问。配置在 `scripts/gpu-server/`，步骤见 README。
+环境：一张 A100 80GB（驱动 565）；llama.cpp b10931，用 CUDA 12.6 编译；模型是 Qwen3.8 27B 的 Q8_0 GGUF（29 GB，自带 MTP 头），加 F16 视觉投影。上下文 262,144，2 个槽位共用（`--kv-unified`）。前面挂一个 llama-swap（有请求才启动，空闲 15 分钟卸载），笔记本经 ssh 隧道（中间还有跳板机）访问。配置在 `scripts/gpu-server/`，步骤见 [servers.md](servers.md)。
 
 | 项目 | A100（本节） | 2080 Ti + LM Studio（第 1 节） |
 |---|---|---|
