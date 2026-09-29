@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+
+# Frontend dependencies (the built UI in src/localagent/server/static is committed)
+frontend/node_modules/
+
+# LocalAgent's own data: the model registry, API keys, the database, attachments, the scratch folder
+/data/
+
+# Agent scratch space and worktrees
+tmp/
+.la-worktrees/
+
+# The shortcut setup.ps1 generates: it stores this machine's absolute paths
+/LocalAgent.lnk
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Third-party reference material kept locally only
+/kiss sorcar.pdf

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "localagent"
+version = "0.1.0"
+description = "A local-first coding agent for local LLMs (LM Studio, Ollama, vLLM, llama.cpp), inspired by KISS Sorcar"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+dependencies = [
+    "httpx>=0.27",
+    "pyyaml>=6.0",
+    "rich>=13.7",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "websockets>=12",
+    "pypdf>=5",
+    "pypdfium2>=4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+desktop = ["pywebview>=5"]
+
+[project.scripts]
+la = "localagent.cli.main:main"
+localagent = "localagent.cli.main:main"
+
+# What ssh runs for a password when the app logs in to another machine (no console window on Windows).
+[project.gui-scripts]
+la-askpass = "localagent.askpass:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/localagent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: needs a running LLM endpoint configured in the model registry"]
+addopts = "-m \"not live\""
+filterwarnings = [
+    "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+    "ignore:The anyio.abc.BlockingPortal alias is deprecated",
+]

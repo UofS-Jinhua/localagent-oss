@@ -1,0 +1,18 @@
+# llama-swap: starts the model on the first request, stops it after 15 idle minutes.
+# run-swap.sh sets LLM_HOME (this directory) and LLAMA_SWAP_KEY (from secrets/api.key).
+healthCheckTimeout: 900
+startPort: 18100
+logLevel: info
+sendLoadingState: false  # it would write "loading..." into the model's reasoning stream
+captureBuffer: 0  # the default keeps every request and response body (whole conversations) in memory
+apiKeys:
+  - "${env.LLAMA_SWAP_KEY}"
+
+models:
+  qwen3.8-27b:
+    cmd: ${env.LLM_HOME}/start-llm.sh ${PORT}
+    ttl: 900
+    unloadTimeout: 30
+    capabilities:
+      vision: true
+      tools: true

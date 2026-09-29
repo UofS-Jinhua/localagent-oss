@@ -1,0 +1,22 @@
+LocalAgent
+Copyright 2026 the LocalAgent authors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The built web UI in src/localagent/server/static bundles third-party software:
+
+- Monaco Editor (MIT), Copyright (c) Microsoft Corporation
+  https://github.com/microsoft/monaco-editor
+- Codicons, https://github.com/microsoft/vscode-codicons
+  Icons and icon font: Copyright (c) Microsoft Corporation, licensed under
+  CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), used unmodified.
+  Code: MIT, Copyright (c) Microsoft Corporation.
+- React and React DOM (MIT), Copyright (c) Meta Platforms, Inc. and affiliates
+- marked (MIT), https://github.com/markedjs/marked
+- DOMPurify (MPL-2.0 OR Apache-2.0, used under Apache-2.0),
+  (c) Cure53 and other contributors
+
+Their full license texts are in THIRD_PARTY_LICENSES.txt.
+
+The design follows KISS Sorcar (https://github.com/ksenxx/kiss_ai); see
+docs/kiss-sorcar-notes.md.
